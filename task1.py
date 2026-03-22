@@ -147,7 +147,7 @@ def plot_kernel_ridge_results(X_train, y_train, X_test, y_test, y_train_pred, y_
 
 
 def plot_fourier_fitting(X_train, y_train, X_test, y_test,train_mse, test_mse,
-                         train_r2, test_r2, n_harmonics, save_path, model, omega):  # 新增：复用训练好的模型和参数
+                         train_r2, test_r2, n_harmonics, save_path, model, omega):
     plt.figure(figsize=(12, 5))
 
     plt.subplot(1, 2, 1)
@@ -378,7 +378,6 @@ def kernel_ridge(X_train, y_train, X_test, y_test):
                               pipeline, train_mse, test_mse, train_r2, test_r2, '核岭回归结果.png')
     return pipeline, train_mse, test_mse, train_r2, test_r2, y_train_pred, y_test_pred
 
-# 执行各拟合方法
 ls_results = least_squares_regression(X_train, y_train, X_test, y_test)
 gd_results = gradient_descent_regression(X_train, y_train, X_test, y_test)
 newton_results = newton_method_regression(X_train, y_train, X_test, y_test)
